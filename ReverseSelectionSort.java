@@ -1,31 +1,35 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class ReverseSelectionSort {
 
     public static void main(String args[]) {
 
-        int sizeOfArrayToSort = 6; //set array size
-        int arrayToSort[] = {9, 14, 3, 2, 11, 22}; //add elements to Array
+        List<Integer> arrayToSort = new ArrayList<>();
+        Collections.addAll(arrayToSort, 9, 14, 3, 2, 11, 22); // Initializing ArrayList
 
         System.out.println("Array before Sorting is : {9,14,3,2,11,22};");
 
-        for (int i = 0; i < sizeOfArrayToSort - 1; i++) {
-            int maxNumberIndex= i;
+        int sizeOfArrayToSort = arrayToSort.size(); // Getting size of ArrayList
 
-            // Find the index of the maximum  element in the Array
+        for (int i = 0; i < sizeOfArrayToSort - 1; i++) {
+            int maxNumberIndex = i;
+
+            // Find the index of the maximum element in the ArrayList
             for (int j = i + 1; j < sizeOfArrayToSort; j++) {
-                if (arrayToSort[j] > arrayToSort[maxNumberIndex]) //to 
-{
-                    maxNumberIndex= j;
+                if (arrayToSort.get(j).compareTo(arrayToSort.get(maxNumberIndex)) > 0) { // Using compareTo for comparison
+                    maxNumberIndex = j;
                 }
             }
 
-            // Swap the maximum  found with the first element of the Array
-            int temp = arrayToSort[maxNumberIndex];
-            arrayToSort[maxNumberIndex] = arrayToSort[i];
-            arrayToSort[i] = temp;
+            // Swap the maximum found with the first element of the ArrayList
+            Collections.swap(arrayToSort, maxNumberIndex, i);
         }
 
         System.out.print("\nArray after Sorting is : ");
         for (int i = 0; i < sizeOfArrayToSort; i++) {
-            System.out.print(arrayToSort[i] + "  "); //Print Array After Sorting
+            System.out.print(arrayToSort.get(i) + "  "); // Print ArrayList After Sorting
         }
-    } }
+    }
+}
