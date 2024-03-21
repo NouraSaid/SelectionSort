@@ -11,13 +11,13 @@ public class ReverseSelectionSort {
 
         System.out.println("Array before Sorting is : {9,14,3,2,11,22};");
 
-        int sizeOfArrayToSort = arrayToSort.size(); // Getting size of ArrayList
+        Integer sizeOfArrayToSort = arrayToSort.size(); // Getting size of ArrayList
 
-        for (int i = 0; i < sizeOfArrayToSort - 1; i++) {
-            int maxNumberIndex = i;
+        for (Integer i = 0; i < sizeOfArrayToSort - 1; i++) {
+            Integer maxNumberIndex = i;
 
             // Find the index of the maximum element in the ArrayList
-            for (int j = i + 1; j < sizeOfArrayToSort; j++) {
+            for (Integer j = i + 1; j < sizeOfArrayToSort; j++) {
                 if (arrayToSort.get(j).compareTo(arrayToSort.get(maxNumberIndex)) > 0) { // Using compareTo for comparison
                     maxNumberIndex = j;
                 }
@@ -28,7 +28,7 @@ public class ReverseSelectionSort {
         }
 
         System.out.print("\nArray after Sorting is : ");
-        for (int i = 0; i < sizeOfArrayToSort; i++) {
+        for (Integer i = 0; i < sizeOfArrayToSort; i++) {
             System.out.print(arrayToSort.get(i) + "  "); // Print ArrayList After Sorting
         }
     }
